@@ -8,7 +8,7 @@
 #SBATCH --mail-type=ALL
 
 # Running tandem repeat finder for Atlantic salmon genome version 3.1, relased 106
-conda activate gkmsvm-salmon
+#conda activate gkmsvm-salmon
 
 echo " Running from tandem repeat finder version"
 # run trf
