@@ -35,7 +35,7 @@ mkdir inst
 mkdir inst/extdata
 ```
 
-## Generating negative sequences by bed file input of ATTAC seq
+## Generating negative sequences by bed file of positive seq
 
 I prepared a testing example with human hg19 and CTCF bed file.
 
@@ -49,3 +49,6 @@ out_prefix=test_hg19
 genNullSeqs_tfr.R bed=$bed trf=$trf bsgenome=$bsgenome xfold=$n out_prefix=$out_prefix
 
 ```
+
+
+##
