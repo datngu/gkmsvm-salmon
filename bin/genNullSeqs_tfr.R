@@ -341,7 +341,9 @@ outputPosFastaFN = paste0(out_prefix, "_", 'posSet.fa')
 outputNegFastaFN = paste0(out_prefix, "_", 'negSet.fa')
 
 require(BSgenome)
-require(get(bsgenome))
+#bsgenome="BSgenome.Hsapiens.UCSC.hg19.masked"
+lapply(bsgenome, require, character.only = TRUE)
+
 genNullSeqs_trf(inputBedFN = bed_path, trfBedFN = trf_path, genome = get(bsgenome), xfold = xfold, outputBedFN = outputBedFN , outputPosFastaFN = outputPosFastaFN, outputNegFastaFN = outputNegFastaFN)
 
 cat("DONE!")
