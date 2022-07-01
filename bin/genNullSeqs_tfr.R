@@ -1,4 +1,4 @@
-#!/usr/bin/env R
+#!/usr/bin/env Rscript
 
 if ( requireNamespace("GenomicRanges", quietly = TRUE)&
     requireNamespace("rtracklayer", quietly = TRUE)&
