@@ -45,7 +45,7 @@ bed=test_ctcf_pos.bed
 trf=trf_hg19.bed
 bsgenome=BSgenome.Hsapiens.UCSC.hg19.masked
 n=1
-
-genNullSeqs_tfr.R bed=$bed trf=$trf bsgenome=$bsgenome xfold=$n
+out_prefix=test_hg19
+genNullSeqs_tfr.R bed=$bed trf=$trf bsgenome=$bsgenome xfold=$n out_prefix=$out_prefix
 
 ```

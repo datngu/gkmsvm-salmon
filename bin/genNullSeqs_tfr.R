@@ -341,8 +341,8 @@ outputPosFastaFN = paste0(out_prefix, "_", 'posSet.fa')
 outputNegFastaFN = paste0(out_prefix, "_", 'negSet.fa')
 
 require(BSgenome)
-require(bsgenome)
-genNullSeqs_trf(inputBedFN = bed_path, trfBedFN = trf_path, genome = bsgenome, xfold = xfold, outputBedFN = outputBedFN , outputPosFastaFN = outputPosFastaFN, outputNegFastaFN = outputNegFastaFN)
+require(get(bsgenome))
+genNullSeqs_trf(inputBedFN = bed_path, trfBedFN = trf_path, genome = get(bsgenome), xfold = xfold, outputBedFN = outputBedFN , outputPosFastaFN = outputPosFastaFN, outputNegFastaFN = outputNegFastaFN)
 
 cat("DONE!")
 
