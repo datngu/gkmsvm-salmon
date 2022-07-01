@@ -14,7 +14,7 @@ Set your working directory to this directory
 # forge and install BSgenome of atlantic salmon v3.1
 bash install.sh 
 # run tandem repeat finder to find tandem repeat regions
-bash tandem_repeat_finder
+bash tandem_repeat_finder.sh
 ```
 
 
