@@ -27,6 +27,7 @@ bash tandem_repeat_finder.sh
 ```
 
 **Warning**: If **.TwoBits_export** error happens, please create **extdata** following [the author's suggestion](https://support.bioconductor.org/p/124169/):
+
 ```
 cd `echo 'cat(system.file(package="BSgenome"))' | R --vanilla --slave`
 cd pkgtemplates/BSgenome_datapkg/
@@ -37,3 +38,11 @@ mkdir inst/extdata
 ## Generating negative sequences by bed file input of ATTAC seq
 
 I prepared a testing example with human hg19 and CTCF bed file.
+
+```sh
+
+bed=
+trf
+genNullSeqs_tfr.R bed=path/to/posSeq.bed trf=path/to/trf.bed out=output_name.txt bsgenome=BSgenome.package.name xfold=n
+
+```
