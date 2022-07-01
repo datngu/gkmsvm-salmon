@@ -10,7 +10,8 @@ This repo is adapted from my close friend github repo https://github.com/tracqua
 
 Set your working directory to this directory 
 ```sh
-# cd bsgenome
+# change your working directory
+cd bsgenome
 # forge and install BSgenome of atlantic salmon v3.1
 bash install.sh 
 # run tandem repeat finder to find tandem repeat regions
