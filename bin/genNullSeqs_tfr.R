@@ -4,9 +4,9 @@ if ( requireNamespace("GenomicRanges", quietly = TRUE)&
     requireNamespace("rtracklayer", quietly = TRUE)&
     requireNamespace("BSgenome", quietly = TRUE) )
 {
-  cat("Checking reuired packages successfully\n")
+  cat("Checking required packages successfully\n")
 }else{
-  cat("Checking reuired packages failed\n")
+  cat("Checking required packages failed\n")
   cat("Please install: GenomicRanges, rtracklayer, BSgenome \n")
   quit()
 }
@@ -288,7 +288,7 @@ genNullSeqs_trf = function(
 options(stringsAsFactors = FALSE)
 
 args = commandArgs(trailingOnly=TRUE)
-syntax='\nUsage:\t./genNullSeqs_tfr.R bed=path/to/posSeq.bed trf=path/to/trf.bed bsgenome=BSgenome.package.name xfold=n out_prefix="NA"\n\nInput parameters are:\n\tbed: postive seq bed file.\n\ttrf: tandem repeat finder bed file.\n\tbsgenome: BSgenome package name of the target genome, here we use "BSgenome.Salmo.Salar.Ensembl.106"\n\txfold: interger value of xfold ratio: negSet/posSet\n\out_prefix: output prefix\n\n'
+syntax='\nUsage:\t./genNullSeqs_tfr.R bed=path/to/posSeq.bed trf=path/to/trf.bed bsgenome=BSgenome.package.name xfold=n out_prefix="NA"\n\nInput parameters are:\n\tbed: postive seq bed file.\n\ttrf: tandem repeat finder bed file.\n\tbsgenome: BSgenome package name of the target genome, here we use "BSgenome.Salmo.Salar.Ensembl.106"\n\txfold: interger value of xfold ratio: negSet/posSet\n\tout_prefix: output prefix\n\n'
 
 bed_path = trf_path = bsgenome = xfold = out_prefix = NA
 
