@@ -28,21 +28,6 @@ echo " Extracting files"
 gunzip seqs/*.gz
 
 
-echo " Running from tandem repeat finder version"
-# run trf
-for chr in {1..29}
-do
-  trf seqs/${chr}.fa 2 7 7 80 10 50 12 -d &
-done
-wait
-
-rm *html
-
-for chr in {1..29}
-do
-  trf_dat2bed.py --dat ${chr}.fa.2.7.7.80.10.50.12.dat --bed trf_bed/${chr}.bed
-done
-
 
 # build based package
 cp seed_template seed
@@ -55,6 +40,9 @@ R CMD build BSgenome.Salmo.Salar.Ensembl.106
 #R CMD check BSgenome.Salmo.Salar.Ensembl.106_1.0.tar.gz --no-manual
 # install
 R CMD INSTALL BSgenome.Salmo.Salar.Ensembl.106_1.0.tar.gz 
+
+echo "BSgenome package is INSTALLED!"
+
 
 
 
