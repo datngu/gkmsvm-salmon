@@ -288,9 +288,9 @@ genNullSeqs_trf = function(
 options(stringsAsFactors = FALSE)
 
 args = commandArgs(trailingOnly=TRUE)
-syntax='\nUsage:\t./genNullSeqs_tfr.R bed=path/to/posSeq.bed trf=path/to/trf.bed out=output_name.txt bsgenome=BSgenome.package.name xfold=n\n\nInput parameters are:\n\tbed: postive seq bed file.\n\ttrf: tandem repeat finder bed file.\n\tbsgenome: BSgenome package name of the target genome, here we use "BSgenome.Salmo.Salar.Ensembl.106"\n\txfold: interger value of xfold ratio: negSet/posSet"\n\n'
+syntax='\nUsage:\t./genNullSeqs_tfr.R bed=path/to/posSeq.bed trf=path/to/trf.bed bsgenome=BSgenome.package.name xfold=n out_prefix="NA"\n\nInput parameters are:\n\tbed: postive seq bed file.\n\ttrf: tandem repeat finder bed file.\n\tbsgenome: BSgenome package name of the target genome, here we use "BSgenome.Salmo.Salar.Ensembl.106"\n\txfold: interger value of xfold ratio: negSet/posSet\n\out_prefix: output prefix\n\n'
 
-bed = trf = bsgenome = xfold = NA
+bed_path = trf_path = bsgenome = xfold = out_prefix = NA
 
 if(length(args) == 0 ){
   cat("\nNo argument, Program stop! \n")
@@ -304,15 +304,16 @@ for (i in 1:length(args)){
   if (res[1] == "trf") trf_path = res[2]   
   if (res[1] == "bsgenome") bsgenome = res[2]   
   if (res[1] == "xfold") xfold = as.numeric(res[2])
+  if (res[1] == "out_prefix") out_prefix = res[2]  
 }
 
-if(is.na(bed)){
+if(is.na(bed_path)){
   cat(syntax)
   cat("bed is not found! Program stop!\n\n")
   quit()
 }
 
-if(is.na(trf)){
+if(is.na(trf_path)){
   cat(syntax)
   cat("trf is not found! Program stop!\n\n")
   quit()
@@ -329,9 +330,19 @@ if(is.na(xfold)){
   cat("xfold is not found! Use: 1\n\n")
 }
 
+
+if(is.na(out_prefix)){
+  out_prefix = ""
+  cat("xfold is not found! Use default value.\n\n")
+}
+
+outputBedFN = paste0(out_prefix, "_", 'negSet.bed')
+outputPosFastaFN = paste0(out_prefix, "_", 'posSet.fa') 
+outputNegFastaFN = paste0(out_prefix, "_", 'negSet.fa')
+
 require(BSgenome)
 require(bsgenome)
-genNullSeqs_trf(inputBedFN = bed, trfBedFN = trf, genome = bsgenome, xfold = xfold)
+genNullSeqs_trf(inputBedFN = bed_path, trfBedFN = trf_path, genome = bsgenome, xfold = xfold, outputBedFN = outputBedFN , outputPosFastaFN = outputPosFastaFN, outputNegFastaFN = outputNegFastaFN)
 
 cat("DONE!")
 

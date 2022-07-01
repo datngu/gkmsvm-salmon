@@ -41,8 +41,11 @@ I prepared a testing example with human hg19 and CTCF bed file.
 
 ```sh
 
-bed=
-trf
-genNullSeqs_tfr.R bed=path/to/posSeq.bed trf=path/to/trf.bed out=output_name.txt bsgenome=BSgenome.package.name xfold=n
+bed=test_ctcf_pos.bed
+trf=trf_hg19.bed
+bsgenome=BSgenome.Hsapiens.UCSC.hg19.masked
+n=1
+
+genNullSeqs_tfr.R bed=$bed trf=$trf bsgenome=$bsgenome xfold=$n
 
 ```
