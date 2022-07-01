@@ -8,7 +8,19 @@ This repo is adapted from my close friend github repo https://github.com/tracqua
 ## Installation
 
 
-Set your working directory to this directory and simply execute the `bash install.sh` on the terminal. **Salmon salar - release 106 (soft-masked)** fasta files from Ensembl will be downloaded and **BSgenome.Salmo_Salar.Ensembl.106** package will be built and installed on your environment.
+Set your working directory to this directory 
+```sh
+# cd bsgenome
+# forge and install BSgenome of atlantic salmon v3.1
+bash install.sh 
+# run tandem repeat finder to find tandem repeat regions
+bash tandem_repeat_finder
+```
+
+
+and simply execute the `bash install.sh` on the terminal. **Salmon salar - release 106 (soft-masked)** fasta files from Ensembl will be downloaded and **BSgenome.Salmo_Salar.Ensembl.106** package will be built and installed on your environment.
+
+
 
 **Warning**: If **.TwoBits_export** error happens, please create **extdata** following [the author's suggestion](https://support.bioconductor.org/p/124169/):
 ```
